@@ -7,26 +7,43 @@ body {
     padding: 40px;
 }
 
-/* top-left header */
+/* header stays top */
 .header {
-    text-align: left;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
-/* centered icon grid */
+/* MAIN 2-COLUMN LAYOUT */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    align-items: start;
+}
+
+
+
+/* ABOUT BOX (left side) */
+.about {
+    border: 1px solid #ddd;
+    padding: 20px;
+    grid-column: 1;
+}
+
+/* ICON GRID (left side) */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 120px);
+    grid-template-columns: repeat(2, 120px);
     gap: 20px;
-
-    justify-content: center;
 }
 
-/* each “icon tile” */
+
+/* tiles */
 .tile {
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-column: 2;
 
     width: 120px;
     height: 120px;
@@ -34,43 +51,48 @@ body {
     border: 1px solid #ccc;
     text-decoration: none;
     color: black;
-
-    font-size: 14px;
 }
 
-/* hover effect */
 .tile:hover {
     background: #f0f0f0;
 }
+
+
 </style>
+
+
 
 
 <body>
 
-
   <div class="header">
     <h1>Élise Desbarats</h1>
-    <p>PhD Candidate | Brain & Music Research</p>
+    <p>PhD Candidate | McGill University </p>
   </div>
 
+  <div class="layout">
 
-    <p>Welcome to my website.</p>
+    <div class="grid">
+      <a href="goals.html" class="tile">Goals</a>
+      <a href="#" class="tile">Projects</a>
+      <a href="#" class="tile">CV</a>
+      <a href="#" class="tile">Notes</a>
+    </div>
 
-    <h2>About Me</h2>
-    <p>
-        This website is under construction for now, i'm mostly using it to learn .html.
-    </p>
-    <p> 
-        I'm interested in creating models of brain activity to better understand how emotion works. I currently research the neurological effects of music on pain 
-    </p>
+    <div class="about">
+      <h2>About Me</h2>
 
-  <div class="grid">
-    <a href="goals.html" class="tile">Goals</a>
-    <a href="#" class="tile">Projects</a>
-    <a href="#" class="tile">CV</a>
-    <a href="#" class="tile">Notes</a>
+      <p>
+        This website is under construction for now, I'm mostly using it to learn HTML.
+      </p>
+
+      <p>
+        I'm interested in creating models of brain activity to better understand how emotion works.
+        I currently research the neurological effects of music on pain.
+      </p>
+    </div>
+
   </div>
-    
 
 </body>
 </html>
