@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
+<style>
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
 
-<head>
-    <title>My Site</title>
+/* top-left header */
+.header {
+    text-align: left;
+    margin-bottom: 60px;
+}
 
-  <style>
-    h1 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 38px;
-    }
+/* centered icon grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 20px;
 
-    h2 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 24px;
-        margin-top: 30px;
-    }
-    </style>
-</head>
+    justify-content: center;
+}
 
+/* each “icon tile” */
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    width: 120px;
+    height: 120px;
+
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: black;
+
+    font-size: 14px;
+}
+
+/* hover effect */
+.tile:hover {
+    background: #f0f0f0;
+}
+</style>
 
 
 <body>
