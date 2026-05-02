@@ -4,6 +4,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
 </style>
 
 <meta charset="UTF-8">
@@ -22,7 +23,7 @@ body.fun {
   --bg: #fffbe6;
   --text: #1a1a2e;
   --border: pink;
-  --hover-bg: #fde8c8;
+  --hover-bg: white;
   --tile-icon-bg: white;
   --font: 'Comic Sans MS', cursive;
   background-image: url('assets/clouds2.gif');
@@ -55,8 +56,10 @@ body.fun {
     white-space: nowrap;
   }
   .toggle-btn:hover { background: var(--hover-bg); }
-  body.fun .toggle-btn { border-color: purple; background: pink; 
+  body.fun .toggle-btn { border-color: purple; background: white; 
 }
+body.fun .toggle-btn:hover  { background: var(--hover-bg); }
+
   .layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -81,6 +84,8 @@ body.fun {
     gap: 30px;
     max-width: 400px;
     margin-left: 40px; 
+    border-radius: 25px;
+    padding: 20px;
   }
   /* --- Desktop icon tile --- */
   .tile {
@@ -89,6 +94,7 @@ body.fun {
     align-items: center;
     gap: 6px;
     text-decoration: none;
+    border-radius: 12px;
     color: var(--text);
     cursor: pointer;
   }
@@ -117,6 +123,7 @@ body.fun {
     border-radius: 2px;
     word-break: break-word;
     line-height: 1.3;
+    
   }
 
 .tile-normal-img, .tile-fun-img {
@@ -134,12 +141,21 @@ body.fun {
     color: white;
   }
   body.fun .tile:hover .tile-label {
-    background: #ebb9e6;
+    background: WHITE;
     color: purple;
   }
   body.fun .tile-label { font-size: 24px; }
 
+body.fun .grid {
+  background: white;  /* ← whatever color you want */
+  padding: 30px;  /* optional, stops the bg from hugging the tiles too tight */
+}
 
+body.fun .tile-label {
+  font-size: 24px;
+  font-family: "Jacquard 24";
+  margin-top: 12px;  /* ← adjust to taste */
+}
   
 </style>
 
