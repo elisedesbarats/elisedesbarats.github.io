@@ -23,13 +23,18 @@ body.fun {
   --bg: #fffbe6;
   --text: #1a1a2e;
   --border: pink;
-  --hover-bg: white;
+  --hover-bg: #f5f5f5;
   --tile-icon-bg: white;
   --font: 'Comic Sans MS', cursive;
   background-image: url('assets/clouds2.gif');
   background-repeat: repeat;
   background-size: 100px 100px;
 }
+
+
+.fun-only { display: none; }
+body.fun .fun-only { display: flex; }
+
 
   * { box-sizing: border-box; }
   body {
@@ -152,7 +157,7 @@ body.fun .grid {
 }
 
 body.fun .tile-label {
-  font-size: 24px;
+  font-size: 30px;
   font-family: "Jacquard 24";
   margin-top: 12px;  /* ← adjust to taste */
 }
@@ -207,8 +212,11 @@ body.fun .tile-label {
         </div>
         <span class="tile-label">Notes</span>
       </a>
+
     </div>
   </div>
+
+
 
   <script>
     function toggleFun(btn) {
@@ -227,6 +235,10 @@ body.fun .tile-label {
   color: #999;
   text-decoration: none;
 ">asset credit</a>
+
+<a href="index2.html" class="secret-link fun-only">
+  <img src="assets/decor/onestar.png">
+</a>
 
 </body>
 </html>
