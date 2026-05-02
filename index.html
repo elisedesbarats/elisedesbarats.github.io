@@ -162,6 +162,11 @@ body.fun .tile-label {
   margin-top: 12px;  /* ← adjust to taste */
 }
   
+.secret-link img {
+  width: 30px;  /* ← adjust to taste */
+  height: auto;
+}
+
 </style>
 
 
@@ -172,7 +177,7 @@ body.fun .tile-label {
       <h1>Élise Desbarats</h1>
       <p>PhD Candidate | McGill University</p>
     </div>
-    <button class="toggle-btn" onclick="toggleFun(this)">✦ Fun mode</button>
+    <button class="toggle-btn" onclick="toggleFun(this)">✦ Toggle Artist Mode</button>
   </div>
 
   <div class="layout">
@@ -222,7 +227,7 @@ body.fun .tile-label {
     function toggleFun(btn) {
       document.getElementById('site-body').classList.toggle('fun');
       const isFun = document.getElementById('site-body').classList.contains('fun');
-      btn.textContent = isFun ? '✦ Serious mode' : '✦ Fun mode';
+      btn.textContent = isFun ? '✦ Toggle Academia Mode' : '✦ Toggle Artist Mode';
     }
   </script>
 
@@ -236,7 +241,7 @@ body.fun .tile-label {
   text-decoration: none;
 ">asset credit</a>
 
-<a href="index2.html" class="secret-link fun-only">
+<a href="s1.html" class="secret-link fun-only">
   <img src="assets/decor/onestar.png">
 </a>
 
