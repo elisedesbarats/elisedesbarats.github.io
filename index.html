@@ -55,7 +55,7 @@ body.fun {
     white-space: nowrap;
   }
   .toggle-btn:hover { background: var(--hover-bg); }
-  body.fun .toggle-btn { border-color: #f4a261; background: #fde8c8; 
+  body.fun .toggle-btn { border-color: purple; background: pink; 
 }
   .layout {
     display: grid;
@@ -70,8 +70,10 @@ body.fun {
   }
   body.fun .about {
     border-style: dotted;
-    border-width: 2px;
-    border-radius: 8px;
+    border-width: 10px;
+    border-radius: 10px;
+    background: white;
+    border-color: pink; 
   }
   .grid {
     display: grid;
@@ -103,50 +105,7 @@ body.fun {
     transition: background 0.2s;
   }
 
-  .tile:hover .tile-icon { background: var(--hover-bg); }
-  /* The spinning 3D cube (CSS stand-in for your GIF) */
-  .cube-wrap {
-    width: 40px;
-    height: 40px;
-    perspective: 80px;
-    animation: none;
-  }
-  .cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: none;
-    transition: transform 0.3s;
-  }
-  .tile:hover .cube {
-    animation: spin3d 1.5s linear infinite;
-  }
-  @keyframes spin3d {
-    from { transform: rotateY(0deg) rotateX(10deg); }
-    to   { transform: rotateY(360deg) rotateX(10deg); }
-  }
-  .face {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border: 1px solid #aaa;
-    opacity: 0.85;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .front  { background: #c8d8f0; transform: translateZ(14px); }
-  .back   { background: #b0c4de; transform: rotateY(180deg) translateZ(14px); }
-  .left   { background: #a8bcd4; transform: rotateY(-90deg) translateZ(14px); }
-  .right  { background: #a8bcd4; transform: rotateY(90deg) translateZ(14px); }
-  .top    { background: #FFFFFF; transform: rotateX(90deg) translateZ(14px); }
-  .bottom { background: #98aec8; transform: rotateX(-90deg) translateZ(14px); }
-  body.fun .face { background: #ffd6a5; border-color: #f4a261; }
-  body.fun .back   { background: #ffb347; }
-  body.fun .top    { background: #ffe0b2; }
-  body.fun .bottom { background: #ff9800; }
+
 
   .tile-label {
     font-size: 24px;
@@ -160,7 +119,6 @@ body.fun {
     line-height: 1.3;
   }
 
-
 .tile-normal-img, .tile-fun-img {
   width: 150px;
   height: 150px;
@@ -172,14 +130,17 @@ body.fun {
     body.fun .tile-normal-img { display: none; }
 
   .tile:hover .tile-label {
-    background: #0078d7;
+    background: #000000;
     color: white;
   }
   body.fun .tile:hover .tile-label {
-    background: #f4a261;
-    color: white;
+    background: #ebb9e6;
+    color: purple;
   }
-  body.fun .tile-label { font-size: 13px; font-weight: bold; }
+  body.fun .tile-label { font-size: 24px; }
+
+
+  
 </style>
 
 
@@ -207,7 +168,7 @@ body.fun {
             <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
             <img src="assets/icons/icon1-fun.jpg" class="tile-fun-img">
         </div>
-        <span class="tile-label">Goals</span>
+        <span class="tile-label">Site Goals</span>
       </a>
       <a href="#" class="tile">
         <div class="tile-icon">
