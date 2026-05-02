@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
+
     body {
       font-family: 'Comic Sans MS', cursive;
       margin: 0;
@@ -10,6 +14,10 @@
       background-image: url('assets/clouds2.gif');
       background-repeat: repeat;
       background-size: 100px 100px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      
     }
 
     a.back-link {
@@ -24,6 +32,7 @@
 
     .header {
       margin-bottom: 32px;
+     text-align: center;
     }
 
     .header h1 {
@@ -33,10 +42,18 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 150px);
+      grid-template-columns: repeat(2, 200px);
       gap: 30px;
       justify-content: center;
     }
+
+    .grid-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         margin-top: -120px;
+        }
 
     .tile {
       display: flex;
@@ -49,26 +66,27 @@
     }
 
     .tile-icon {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: visible;
+      overflow: hidden;
     }
 
     .tile-icon img {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 8px;
+      overflow: visible;
     }
 
     .tile-label {
       font-size: 20px;
       text-align: center;
-      font-family: "Jacquard 24";
-      margin-top: 6px;
+      font-family: "Bitcount Single";
+      margin-top: 24px;
     }
 
     .tile:hover .tile-label {
@@ -79,17 +97,17 @@
 </head>
 <body>
 
-  <a href="index-fun.html" class="back-link">← home</a>
+  <a href="index-fun.html" class="back-link" style="font-size: 1.2rem; padding: 8px;">⌂ home</a>
 
   <div class="header">
     <h1>Projects</h1>
   </div>
-
+<div class="grid-wrap">
   <div class="grid">
 
     <a href="paintings.html" class="tile">
       <div class="tile-icon">
-        <img src="assets/paintings/painting1.jpg" alt="paintings">
+        <img src="assets/paintings/painting3.jpg" alt="paintings">
       </div>
       <span class="tile-label">Paintings</span>
     </a>
@@ -101,6 +119,7 @@
       <span class="tile-label">Placeholder</span>
     </a>
 
+  </div>
   </div>
 
 </body>
