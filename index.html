@@ -1,101 +1,259 @@
 <!DOCTYPE html>
 <html>
+<head>
+
 <style>
-body {
-    font-family: Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
+</style>
+
+<meta charset="UTF-8">
+
+<style>
+  :root {
+  --bg: #fff;
+  --text: #111;
+  --border: #ddd;
+  --hover-bg: #f5f5f5;
+  --tile-icon-bg: #ffffff;
+  --font: Helvetica, Arial, sans-serif;
+}
+
+body.fun {
+  --bg: #fffbe6;
+  --text: #1a1a2e;
+  --border: #f4a261;
+  --hover-bg: #fde8c8;
+  --tile-icon-bg: #fad7a0;
+  --font: 'Comic Sans MS', cursive;
+  background-image: url('assets/clouds2.gif');
+  background-repeat: repeat;
+  background-size: 100px 100px;
+}
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font);
     margin: 0;
     padding: 40px;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+  }
+  .header { margin-bottom: 40px; display: flex; align-items: baseline; justify-content: space-between; }
+  .header h1 { margin: 0 0 6px; font-size: 1.8rem; }
+  .header p { margin: 0; color: #666; }
+  .toggle-btn {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: 13px;
+    color: var(--text);
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+  .toggle-btn:hover { background: var(--hover-bg); }
+  body.fun .toggle-btn { border-color: #f4a261; background: #fde8c8; 
 }
-
-/* header stays top */
-.header {
-    margin-bottom: 40px;
-}
-
-/* MAIN 2-COLUMN LAYOUT */
-.layout {
+  .layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-
     align-items: start;
-}
-
-
-
-/* ABOUT BOX (left side) */
-.about {
-    border: 1px solid #ddd;
+  }
+  .about {
+    border: 1px solid var(--border);
     padding: 20px;
-  
-}
-
-/* ICON GRID (right side) */
-.grid {
+    transition: border-color 0.4s;
+  }
+  body.fun .about {
+    border-style: dotted;
+    border-width: 2px;
+    border-radius: 8px;
+  }
+  .grid {
     display: grid;
-    grid-template-columns: repeat(2, 120px);
-    gap: 20px;
-    
-}
-
-
-/* tiles */
-.tile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  /* --- Desktop icon tile --- */
+  .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .tile-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--tile-icon-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-
-    width: 120px;
-    height: 120px;
-
-    border: 1px solid #ccc;
-    text-decoration: none;
-    color: black;
-}
-
-.tile:hover {
-    background: #f0f0f0;
-}
-
-
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+  .tile:hover .tile-icon { background: var(--hover-bg); }
+  /* The spinning 3D cube (CSS stand-in for your GIF) */
+  .cube-wrap {
+    width: 40px;
+    height: 40px;
+    perspective: 80px;
+    animation: none;
+  }
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: none;
+    transition: transform 0.3s;
+  }
+  .tile:hover .cube {
+    animation: spin3d 1.5s linear infinite;
+  }
+  @keyframes spin3d {
+    from { transform: rotateY(0deg) rotateX(10deg); }
+    to   { transform: rotateY(360deg) rotateX(10deg); }
+  }
+  .face {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #aaa;
+    opacity: 0.85;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .front  { background: #c8d8f0; transform: translateZ(14px); }
+  .back   { background: #b0c4de; transform: rotateY(180deg) translateZ(14px); }
+  .left   { background: #a8bcd4; transform: rotateY(-90deg) translateZ(14px); }
+  .right  { background: #a8bcd4; transform: rotateY(90deg) translateZ(14px); }
+  .top    { background: #FFFFFF; transform: rotateX(90deg) translateZ(14px); }
+  .bottom { background: #98aec8; transform: rotateX(-90deg) translateZ(14px); }
+  body.fun .face { background: #ffd6a5; border-color: #f4a261; }
+  body.fun .back   { background: #ffb347; }
+  body.fun .top    { background: #ffe0b2; }
+  body.fun .bottom { background: #ff9800; }
+  .tile-label {
+    font-size: 12px;
+    text-align: center;
+    font-family: "Bitcount Single";
+    font-weight: 400;
+    background: transparent;
+    padding: 1px 4px;
+    border-radius: 2px;
+    max-width: 80px;
+    word-break: break-word;
+    line-height: 1.3;
+  }
+  .tile:hover .tile-label {
+    background: #0078d7;
+    color: white;
+  }
+  body.fun .tile:hover .tile-label {
+    background: #f4a261;
+    color: white;
+  }
+  body.fun .tile-label { font-size: 13px; font-weight: bold; }
 </style>
-
-
-
-
-<body>
-
+</head>
+<body id="site-body">
   <div class="header">
-    <h1>Élise Desbarats</h1>
-    <p>PhD Candidate | McGill University </p>
+    <div>
+      <h1>Élise Desbarats</h1>
+      <p>PhD Candidate | McGill University</p>
+    </div>
+    <button class="toggle-btn" onclick="toggleFun(this)">✦ Fun mode</button>
   </div>
 
   <div class="layout">
-
-   
-
     <div class="about">
       <h2>About Me</h2>
-
-      <p>
-        This website is under construction for now, I'm mostly using it to learn HTML.
-      </p>
-
-      <p>
-        I'm interested in creating models of brain activity to better understand how emotion works.
-        I currently research the neurological effects of music on pain.
-      </p>
+      <p>This website is under construction for now, I'm mostly using it to learn HTML.</p>
+      <p>I'm interested in creating models of brain activity to better understand how emotion works. I currently research the neurological effects of music on pain.</p>
     </div>
 
-     <div class="grid">
-      <a href="goals.html" class="tile">Goals</a>
-      <a href="#" class="tile">Projects</a>
-      <a href="#" class="tile">CV</a>
-      <a href="#" class="tile">Notes</a>
+    <div class="grid">
+      
+      <a href="#" class="tile">
+        <div class="tile-icon">
+          <div class="cube-wrap">
+            <div class="cube">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face left"></div>
+              <div class="face right"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+          </div>
+        </div>
+        <span class="tile-label">Goals</span>
+      </a>
+      <a href="#" class="tile">
+        <div class="tile-icon">
+          <div class="cube-wrap">
+            <div class="cube">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face left"></div>
+              <div class="face right"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+          </div>
+        </div>
+        <span class="tile-label">Projects</span>
+      </a>
+      <a href="#" class="tile">
+        <div class="tile-icon">
+          <div class="cube-wrap">
+            <div class="cube">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face left"></div>
+              <div class="face right"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+          </div>
+        </div>
+        <span class="tile-label">CV</span>
+      </a>
+      <a href="#" class="tile">
+        <div class="tile-icon">
+          <div class="cube-wrap">
+            <div class="cube">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face left"></div>
+              <div class="face right"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+          </div>
+        </div>
+        <span class="tile-label">Notes</span>
+      </a>
     </div>
-
   </div>
 
+  <script>
+    function toggleFun(btn) {
+      document.getElementById('site-body').classList.toggle('fun');
+      const isFun = document.getElementById('site-body').classList.contains('fun');
+      btn.textContent = isFun ? '✦ Serious mode' : '✦ Fun mode';
+    }
+  </script>
 </body>
 </html>
