@@ -196,7 +196,7 @@ body.fun .tile-label {
         </div>
         <span class="tile-label">Site Goals</span>
       </a>
-      <a href="#" class="tile">
+      <a href="#" class="tile" onclick="navigate('projects.html', 'projects-fun.html')"></a>
         <div class="tile-icon">
             <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
             <img src="assets/icons/icon2-fun.jpg" class="tile-fun-img">
@@ -229,6 +229,15 @@ body.fun .tile-label {
       const isFun = document.getElementById('site-body').classList.contains('fun');
       btn.textContent = isFun ? '✦ Toggle Academia Mode' : '✦ Toggle Artist Mode';
     }
+
+    function navigate(normal, fun) {
+    if (document.body.classList.contains('fun')) {
+        window.location.href = fun;
+    } else {
+        window.location.href = normal;
+    }
+    }
+
   </script>
 
 
