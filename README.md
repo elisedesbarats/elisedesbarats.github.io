@@ -1,2 +1,2 @@
-# mysite
-Elise's personal website 
+# My personal website
+
