@@ -14,67 +14,67 @@
       <h1>Élise Desbarats</h1>
       <p>PhD Candidate | McGill University</p>
    </div>
-  <button class="toggle-btn" onclick="window.location.href='index-fun.html'">✦ Toggle Artist Mode</button>
+  
 </div>
 
   <div class="layout">
     <div class="about">
       <h2>About Me</h2>
-      <p>This website is under construction for now, I'm mostly using it to learn HTML.</p>
+      <p>This website is under construction for now, I'm mostly using it to get used to HTML.</p>
       <p>I'm interested in how the brain represents emotional states, and I currently research the neurological effects of music on pain.</p>
     </div>
 
     <div class="grid">
-      
-      <a href="goals.html" class="tile">
-        <div class="tile-icon">
-            <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
-            <img src="assets/icons/icon1-fun.png" class="tile-fun-img">
-        </div>
-        <span class="tile-label">Site Goals</span>
-      </a>
-    <a href="#" class="tile" onclick="navigate('projects.html', 'projects-fun.html')">
-    <div class="tile-icon">
+    
+
+    <!-- Projects tile → Google Scholar -->
+    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=edlkFDAAAAAJ&gmla=AERr9JFzbs6cQJqfvsBaqgrOlRQC1Bie5UeHVjZcWDPb1-aOyP3kFeiCe4XnvLRzqrcrxSiqQ5ZcPZlGFD3piz0xnzihrZC-Ws_qKmu6K_Q0RMDd8WsjThGl" class="tile">
+      <div class="tile-icon">
         <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
-        <img src="assets/icons/icon2-fun.jpg" class="tile-fun-img">
-    </div>
-    <span class="tile-label">Projects</span>
+        
+      </div>
+      <span class="tile-label">Google Scholar</span>
     </a>
-      <a href="#" class="tile">
-        <div class="tile-icon">
-         <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
-        <img src="assets/icons/icon3-fun.jpg" class="tile-fun-img">
-        </div>
-        <span class="tile-label">CV</span>
-      </a>
-      <a href="#" class="tile">
-        <div class="tile-icon">
-            <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
-            <img src="assets/icons/icon4-fun.jpg" class="tile-fun-img">
-        </div>
-        <span class="tile-label">LinkedIn</span>
-      </a>
+
+    <!-- CV tile → under construction page -->
+    <a href="cv.html" class="tile">
+      <div class="tile-icon">
+        <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
+        
+      </div>
+      <span class="tile-label">CV</span>
+    </a>
+
+    <!-- LinkedIn tile -->
+    <a href="https://www.linkedin.com/in/%C3%A9lise-d-4a5345107/" class="tile">
+      <div class="tile-icon">
+        <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
+        
+      </div>
+      <span class="tile-label">LinkedIn</span>
+    </a>
+ <!-- Github tile -->
+      <a href="https://github.com/elisedesbarats" class="tile">
+    <div class="tile-icon">
+      <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
+      
+    </div>
+    <span class="tile-label">GitHub</span>
+    </a>
+
+    <a href="paintings.html" class="tile">
+      <div class="tile-icon">
+        <img src="assets/icons/icon1-normal.gif" class="tile-normal-img">
+      </div>
+      <span class="tile-label">Paintings</span>
+    </a>
 
     </div>
   </div>
 
 
 
-  <script>
-   
-
-    function navigate(normal, fun) {
-    if (document.body.classList.contains('fun')) {
-        window.location.href = fun;
-    } else {
-        window.location.href = normal;
-    }
-    }
-
- 
-
-  </script>
-
+  
 
 <a href="credit.html" style="
   position: fixed;
@@ -85,9 +85,6 @@
   text-decoration: none;
 ">asset credit</a>
 
-<a href="s1.html" class="secret-link fun-only">
-  <img src="assets/decor/onestar.png">
-</a>
 
 </body>
 </html>
